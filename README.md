@@ -99,9 +99,13 @@ Projeto educacional voltado à conscientização em Segurança da Informação.
 
 ## 👤 Autor
 
-**Alex Cavalcante Costa**
+**Alex Cavalcante Costa**  
+Estudante de Análise e Desenvolvimento de Sistemas com foco em Desenvolvimento Web, Cybersegurança, Governança, Gestão de Riscos e Análise de Dados.
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/alex-cavalcante-costa-276483197)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Alex_Cavalcante-0077B5?style=flat&logo=linkedin)](https://www.linkedin.com/in/alex-cavalcante-costa-276483197)
+[![Portfólio](https://img.shields.io/badge/Portfólio-alexcaval--portfolio.vercel.app-7C3AED?style=flat&logo=vercel)](https://alexcaval-portfolio.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-alexcav--dev-181717?style=flat&logo=github)](https://github.com/alexcav-dev)
+[![E-mail](https://img.shields.io/badge/Email-alexcavalcante1800@gmail.com-D14836?style=flat&logo=gmail)](mailto:alexcavalcante1800@gmail.com)
 
 ---
 
