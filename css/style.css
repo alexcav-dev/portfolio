@@ -774,3 +774,19 @@
   .nav-links li{border-bottom:1px solid var(--line-1)}
   .nav-links li:last-child{border-bottom:none}
 }
+
+/* 5) SEPARADOR SOB O PERSONAGEM (mobile/tablet ≤1023px) — uma única linha
+      sutil entre personagem e conteúdo, mesmo padrão da Formação
+      (1px var(--line-2)). Componentes que antes carregavam essa função com
+      a própria borda superior (stat-row, hub-feature, registro principal)
+      deixam de duplicar: a separação passa a ser global e consistente.
+      Desktop (≥1024px) permanece intacto. */
+@media(max-width:1023px){
+  section[data-view]:not(.hero) .sec-body{
+    border-top:1px solid var(--line-2);
+    margin-top:var(--space-sm);
+  }
+  section[data-view] .stat-row{border-top:none}
+  section[data-view] .hub-feature{border-top:none}
+  section[data-view] .form-record--lead:first-child{border-top:none}
+}
