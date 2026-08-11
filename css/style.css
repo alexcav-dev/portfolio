@@ -622,7 +622,7 @@
 
     /* REGISTRO PRINCIPAL — a graduação é o marco da vista: fio mais expressivo,
        escala superior às certificações e respiro maior, sem perder o sistema */
-    .form-record--lead:first-child{border-top:2px solid var(--p-500);padding-top:clamp(2rem,4vh,3rem);padding-bottom:clamp(2.25rem,5vh,3.5rem)}
+    .form-record--lead:first-child{border-top:1px solid var(--line-2);padding-top:clamp(2rem,4vh,3rem);padding-bottom:clamp(2.25rem,5vh,3.5rem)}
     .form-record--lead .form-record__title{font-size:clamp(1.75rem,3vw,2.4rem)}
     .form-record--lead .form-record__inst{font-size:clamp(.95rem,1.15vw,1.1rem);font-weight:600;color:var(--text-2);margin-top:.15rem}
     .form-record--lead .form-record__status{font-size:.78rem;margin-top:.75rem}
@@ -743,7 +743,6 @@
       barra (mesmos filhos, mesmo layout do site-nav). */
 .nav-toggle{display:none}
 .nav-panel{display:flex;align-items:center;flex:1;min-width:0;gap:.25rem}
-.nav-panel .ambient-toggle{margin-left:auto}
 
 /* 3) PERSONAGENS — composição mobile/tablet consistente entre as views
       internas: cabeçalho → personagem → conteúdo (padrão já usado por
@@ -774,5 +773,4 @@
   .nav-links a.active{color:var(--p-600);font-weight:600}
   .nav-links li{border-bottom:1px solid var(--line-1)}
   .nav-links li:last-child{border-bottom:none}
-  .nav-panel .ambient-toggle{margin-left:0;width:100%;justify-content:flex-start;padding:.85rem .4rem;font-size:.68rem}
 }
