@@ -730,3 +730,49 @@
   .ambient-toggle.is-on .ambient-toggle__bass{opacity:.4}
   .ambient-toggle.is-on .ambient-toggle__wave i{height:5px}
 }
+
+/* ============ CORREÇÕES — foco do heading (SPA), nav mobile, personagens ============
+   1) ANEL DE FOCO DO HEADING (SPA): o JS foca o heading da view com
+      tabindex="-1" após a troca (anúncio para leitores de tela). O elemento
+      não é alcançável por Tab — o anel de foco visual (outline do navegador)
+      não tem função e aparece como "seleção azul". O foco acessível
+      permanece; apenas o anel é suprimido nesse caso específico. */
+[tabindex="-1"]:focus{outline:none}
+
+/* 2) NAV MOBILE — base: hamburger oculto no desktop; painel ocupa a área da
+      barra (mesmos filhos, mesmo layout do site-nav). */
+.nav-toggle{display:none}
+.nav-panel{display:flex;align-items:center;flex:1;min-width:0;gap:.25rem}
+.nav-panel .ambient-toggle{margin-left:auto}
+
+/* 3) PERSONAGENS — composição mobile/tablet consistente entre as views
+      internas: cabeçalho → personagem → conteúdo (padrão já usado por
+      Experiência e Contato). O desktop preserva a grade intacta. */
+@media(max-width:1023px){
+  section[data-view]:not(.hero).is-active{display:flex;flex-direction:column}
+  section[data-view]:not(.hero) .sec-head{order:1}
+  section[data-view]:not(.hero) .sec-visual{order:2}
+  section[data-view]:not(.hero) .sec-body{order:3}
+}
+
+/* 4) NAV MOBILE — menu hamburger (≤767px): painel dropdown sob a barra;
+      itens grandes para toque; estado ativo preservado. */
+@media(max-width:767px){
+  .site-nav{flex-wrap:nowrap;padding:.55rem .7rem}
+  .nav-toggle{position:relative;display:inline-flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;min-height:44px;min-width:44px;padding:0 .6rem;background:none;border:none;cursor:pointer;-webkit-tap-highlight-color:transparent;flex-shrink:0}
+  .nav-toggle__bar{display:block;width:22px;height:2px;background:var(--p-600);border-radius:1px;transition:transform .3s cubic-bezier(.22,1,.36,1),opacity .25s ease}
+  .nav-toggle.is-open .nav-toggle__bar:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle.is-open .nav-toggle__bar:nth-child(2){opacity:0}
+  .nav-toggle.is-open .nav-toggle__bar:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  .nav-toggle:focus-visible{outline:none}
+  .nav-toggle:focus-visible::before{content:'';position:absolute;inset:-.35rem -.5rem;border:1px solid var(--p-400);border-radius:4px}
+  .nav-panel{position:absolute;top:100%;left:0;right:0;display:none;flex-direction:column;align-items:stretch;background:rgba(244,240,252,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-1);box-shadow:0 24px 48px -32px rgba(73,55,109,.45);padding:.3rem .75rem 1rem;z-index:99}
+  .nav-panel.is-open{display:flex}
+  .nav-links{flex-direction:column;align-items:stretch;width:100%;gap:0}
+  .nav-links a{display:block;padding:.95rem .4rem;font-size:.95rem;color:var(--text-2)}
+  .nav-links a::after{display:none}
+  .nav-links a.active{color:var(--p-600);font-weight:600}
+  .nav-links li{border-bottom:1px solid var(--line-1)}
+  .nav-links li:last-child{border-bottom:none}
+  .nav-panel .ambient-toggle{margin-left:0;width:100%;justify-content:flex-start;padding:.85rem .4rem;font-size:.68rem}
+}

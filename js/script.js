@@ -125,3 +125,37 @@ function downloadCV() {
     }
   });
 }());
+
+/* MENU MOBILE — toggle do painel de navegação (abre/fecha apenas);
+   a troca de view continua no listener global [data-nav]. */
+(function () {
+  'use strict';
+
+  var toggle = document.getElementById('nav-toggle');
+  var panel = document.getElementById('nav-panel');
+  if (!toggle || !panel) return;
+
+  function setOpen(open) {
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
+    panel.classList.toggle('is-open', open);
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  document.addEventListener('click', function (event) {
+    if (!panel.classList.contains('is-open')) return;
+    var t = event.target;
+    if (!t.closest || !t.closest('.site-nav') || t.closest('[data-nav]')) setOpen(false);
+  });
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && panel.classList.contains('is-open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+}());

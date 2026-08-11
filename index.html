@@ -9,23 +9,31 @@
 </head>
 <body>
 <nav class="site-nav">
-  <ul class="nav-links">
-    <li><a href="#inicio" class="active" data-nav="inicio">Início</a></li>
-    <li><a href="#sobre" data-nav="sobre">Sobre</a></li>
-    <li><a href="#projetos" data-nav="projetos">Projetos</a></li>
-    <li><a href="#engenharia" data-nav="engenharia">Engenharia</a></li>
-    <li><a href="#experiencia" data-nav="experiencia">Experiência</a></li>
-    <li><a href="#formacao" data-nav="formacao">Formação</a></li>
-    <li><a href="#contato" data-nav="contato">Contato</a></li>
-  </ul>
-
-  <button type="button" class="ambient-toggle" id="ambient-toggle" aria-pressed="false" aria-label="Ativar música ambiente">
-    <span class="ambient-toggle__note" aria-hidden="true">&#9834;</span>
-    <span class="ambient-toggle__text">AMBIENT <span class="ambient-toggle__state">OFF</span></span>
-    <span class="ambient-toggle__wave" aria-hidden="true"><i></i><i></i><i></i></span>
-    <span class="ambient-toggle__bass" aria-hidden="true"></span>
+  <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menu">
+    <span class="nav-toggle__bar" aria-hidden="true"></span>
+    <span class="nav-toggle__bar" aria-hidden="true"></span>
+    <span class="nav-toggle__bar" aria-hidden="true"></span>
   </button>
-  <audio id="ambient-audio" src="assets/audio/ambient-lofi.mp3" loop preload="none"></audio>
+
+  <div class="nav-panel" id="nav-panel">
+    <ul class="nav-links">
+      <li><a href="#inicio" class="active" data-nav="inicio">Início</a></li>
+      <li><a href="#sobre" data-nav="sobre">Sobre</a></li>
+      <li><a href="#projetos" data-nav="projetos">Projetos</a></li>
+      <li><a href="#engenharia" data-nav="engenharia">Engenharia</a></li>
+      <li><a href="#experiencia" data-nav="experiencia">Experiência</a></li>
+      <li><a href="#formacao" data-nav="formacao">Formação</a></li>
+      <li><a href="#contato" data-nav="contato">Contato</a></li>
+    </ul>
+
+    <button type="button" class="ambient-toggle" id="ambient-toggle" aria-pressed="false" aria-label="Ativar música ambiente">
+      <span class="ambient-toggle__note" aria-hidden="true">&#9834;</span>
+      <span class="ambient-toggle__text">AMBIENT <span class="ambient-toggle__state">OFF</span></span>
+      <span class="ambient-toggle__wave" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="ambient-toggle__bass" aria-hidden="true"></span>
+    </button>
+    <audio id="ambient-audio" src="assets/audio/ambient-lofi.mp3" loop preload="none"></audio>
+  </div>
 </nav>
 
 <main>
