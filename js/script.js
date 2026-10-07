@@ -159,3 +159,94 @@ function downloadCV() {
     }
   });
 }());
+
+/* TEXTO EM LETRAS (repetível) + REVEAL NO SCROLL
+   - [data-text-anim]: o texto é dividido em letras (spans aria-hidden; o elemento recebe aria-label) e uma
+     sequência CSS de duração fixa é disparada. Observer "play": toca quando qualquer parte do bloco entra na
+     viewport. Observer "rearm": só rearma quando o bloco está >=10% da altura da viewport FORA dela, então
+     oscilações na borda não reiniciam a sequência. As letras só ficam ocultas enquanto o bloco está fora.
+   - [data-reveal]: aparece uma única vez, como antes.
+   - prefers-reduced-motion, sem IntersectionObserver ou erro de JS: nada é ocultado.
+   Sem timers: a duração vive no CSS. Observers são desconectados em pagehide / mudança de preferência. */
+(function () {
+  'use strict';
+  var root = document.documentElement;
+  var mq = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var ioReveal = null, ioPlay = null, ioRearm = null, active = false;
+
+  function all(sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); }
+  function reduced() { return !!(mq && mq.matches); }
+
+  function split(el) {
+    if (el.getAttribute('data-ta-split') === '1') return el.querySelectorAll('.ta-c').length > 0;
+    var label = el.textContent.replace(/\s+/g, ' ').trim(), n = 0, nodes = [], t;
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null);
+    while ((t = walker.nextNode())) nodes.push(t);
+    nodes.forEach(function (node) {
+      var frag = document.createDocumentFragment();
+      node.nodeValue.split(/(\s+)/).forEach(function (part) {
+        if (!part) return;
+        if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+        var w = document.createElement('span');
+        w.className = 'ta-w';
+        w.setAttribute('aria-hidden', 'true');
+        Array.from(part).forEach(function (ch) {
+          var c = document.createElement('span');
+          c.className = 'ta-c';
+          c.style.setProperty('--i', n++);
+          c.textContent = ch;
+          w.appendChild(c);
+        });
+        frag.appendChild(w);
+      });
+      node.parentNode.replaceChild(frag, node);
+    });
+    if (!n) return false;
+    if (!el.hasAttribute('aria-label')) el.setAttribute('aria-label', label);
+    el.style.setProperty('--s', Math.max(12, Math.min(28, Math.round(640 / n))) + 'ms');
+    el.setAttribute('data-ta-split', '1');
+    return true;
+  }
+
+  function play(el) { if (el.classList.contains('ta-play')) return; el.classList.remove('ta-armed'); el.classList.add('ta-play'); }
+  function arm(el) { el.classList.remove('ta-play'); el.classList.add('ta-armed'); }
+
+  function onReveal(entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); ioReveal.unobserve(e.target); } });
+  }
+  function onPlay(entries) { entries.forEach(function (e) { if (e.isIntersecting) play(e.target); }); }
+  function onRearm(entries) {
+    entries.forEach(function (e) { if (!e.isIntersecting && e.target.classList.contains('ta-play')) arm(e.target); });
+  }
+
+  function destroy() {
+    [ioReveal, ioPlay, ioRearm].forEach(function (o) { if (o) o.disconnect(); });
+    ioReveal = ioPlay = ioRearm = null;
+    active = false;
+    root.classList.remove('reveal-on');
+    all('[data-text-anim]').forEach(function (el) { el.classList.remove('ta-armed', 'ta-play'); });
+    all('[data-reveal]').forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  function init() {
+    if (active || reduced() || !('IntersectionObserver' in window)) return;
+    active = true;
+    try {
+      root.classList.add('reveal-on');
+      ioReveal = new IntersectionObserver(onReveal, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+      ioPlay = new IntersectionObserver(onPlay, { threshold: 0 });
+      ioRearm = new IntersectionObserver(onRearm, { rootMargin: '10% 0px 10% 0px', threshold: 0 });
+      all('[data-reveal]').forEach(function (el) { el.classList.remove('is-in'); ioReveal.observe(el); });
+      all('[data-text-anim]').forEach(function (el) {
+        if (!split(el)) return;
+        arm(el); ioPlay.observe(el); ioRearm.observe(el);
+      });
+    } catch (err) { destroy(); }
+  }
+
+  function onPrefChange() { if (reduced()) destroy(); else init(); }
+  if (mq) { if (mq.addEventListener) mq.addEventListener('change', onPrefChange); else if (mq.addListener) mq.addListener(onPrefChange); }
+  window.addEventListener('pagehide', destroy);
+  window.addEventListener('pageshow', function (e) { if (e.persisted) init(); });
+  init();
+}());

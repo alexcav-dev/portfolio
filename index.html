@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Portfólio de Alex Cavalcante Costa — desenvolvimento de sistemas, análise de dados e segurança da informação." />
   <title>Alex Cavalcante Costa — TI | Dados | Segurança</title>
+  <meta name="theme-color" content="#0b0907" />
+  <link rel="preload" href="assets/fonts/cormorant-garamond-latin-600-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -38,32 +41,61 @@
 
 <main>
 <section id="inicio" class="hero is-active" data-view="inicio" aria-label="Apresentação de Alex Cavalcante Costa">
-  <div class="hero-atmosphere" aria-hidden="true">
-    <span class="atmo atmo--distant"><img class="splash splash--distant" src="assets/images/splash_02.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--back"><img class="splash splash--back" src="assets/images/splash_04.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--mid-l"><img class="splash splash--mid-l" src="assets/images/splash_06.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--mid-r"><img class="splash splash--mid-r" src="assets/images/splash_01.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--front"><img class="splash splash--front" src="assets/images/splash_05.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--edge"><img class="splash splash--edge" src="assets/images/splash_03.svg" alt="" decoding="async" loading="lazy" /></span>
-  </div>
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <p class="hero-kicker">// desenvolvimento · arquitetura · segurança</p>
-      <h1 class="hero-name">Alex<br />Cavalcante<br /><span class="hero-name--accent">Costa.</span></h1>
-      <p class="hero-role">Estudante de Análise e Desenvolvimento de Sistemas, construindo soluções de software com dados, arquitetura e segurança no centro.</p>
-      <p class="hero-sub">Experiência em dados, processos administrativos e controle de informações sensíveis, hoje aplicada ao desenvolvimento de sistemas, automação e organização de processos.</p>
+  <div class="hero__stage">
+    <div class="hero__copy">
+      <p class="hero__kicker">// portfólio</p>
+      <h1 class="hero__name" data-text-anim><span class="hero__line">Alex Cavalcante</span> <span class="hero__line hero__line--accent">Costa.</span></h1>
+      <p class="hero__lead">Desenvolvimento de software com foco em arquitetura, segurança e experiências digitais.</p>
       <nav class="hero-actions" aria-label="Atalhos para as seções do portfólio">
         <a href="#projetos" data-nav="projetos" class="hero-cta hero-cta--primary">Explorar projetos <span class="hero-cta__arrow" aria-hidden="true">→</span></a>
         <a href="#engenharia" data-nav="engenharia" class="hero-cta hero-cta--secondary">Conhecer minha engenharia <span class="hero-cta__arrow" aria-hidden="true">→</span></a>
       </nav>
+      <p class="hero__status"><span class="hero__dot" aria-hidden="true"></span>disponível para oportunidades</p>
     </div>
-    <figure class="hero-photo">
-      <div class="hero-photo__frame">
-        <img src="assets/images/profile.jpg" width="625" height="655" alt="Retrato de Alex Cavalcante Costa" fetchpriority="high" decoding="async" />
-        <span class="hero-photo__tag" aria-hidden="true">// alex.cavalcante</span>
-      </div>
-      <figcaption class="hero-photo__meta"><span class="hero-photo__dot" aria-hidden="true"></span>disponível para oportunidades</figcaption>
+    <!-- Retrato: PNG com transparência. O fade inferior é só uma máscara CSS no container (a imagem não é alterada). -->
+    <figure class="hero__portrait">
+      <img src="assets/images/alex-retrato.png" width="1254" height="1254" alt="Retrato de Alex Cavalcante Costa" fetchpriority="high" decoding="async" />
     </figure>
+    <svg class="hero__badge" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><path id="hero-badge-path" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><text textLength="282" lengthAdjust="spacing"><textPath href="#hero-badge-path">DESENVOLVIMENTO · ARQUITETURA · SEGURANÇA · </textPath></text><path class="hero__badge-star" d="M60 43l3.6 13.4L77 60l-13.4 3.6L60 77l-3.6-13.4L43 60l13.4-3.6z"/></svg>
+  </div>
+
+  <div class="home-inner">
+
+    <div class="home-block">
+      <header class="home-head"><div><p class="home-label">// projetos</p><h2 class="home-h2" data-text-anim>Projetos selecionados</h2></div><a class="home-more" href="#projetos" data-nav="projetos">Ver todos os projetos <span aria-hidden="true">→</span></a></header>
+      <div class="home-cards">
+        <a class="home-card" href="#projetos" data-nav="projetos" data-reveal style="--i:0"><span class="home-card__idx">01 · projeto em destaque</span><h3 class="home-card__t">Hub Tributário</h3><p class="home-card__d">Plataforma corporativa que centraliza o acesso aos portais tributários estaduais e municipais utilizados pela empresa, com arquitetura preparada para integração com API e banco de dados.</p><span class="home-card__tags">Arquitetura · Segurança · API ready</span><span class="home-card__go">Ver detalhes <span aria-hidden="true">→</span></span></a>
+        <a class="home-card" href="#projetos" data-nav="projetos" data-reveal style="--i:1"><span class="home-card__idx">02 · 2026</span><h3 class="home-card__t">Finvexys Finance</h3><p class="home-card__d">Plataforma desenvolvida a partir de uma necessidade real de um cliente, para controle financeiro, organização de informações e acompanhamento de indicadores de gestão.</p><span class="home-card__tags">Controle Financeiro · Publicado</span><span class="home-card__go">Ver detalhes <span aria-hidden="true">→</span></span></a>
+        <a class="home-card" href="#projetos" data-nav="projetos" data-reveal style="--i:2"><span class="home-card__idx">03 · 2026</span><h3 class="home-card__t">SafeHook</h3><p class="home-card__d">Plataforma educacional de conscientização em Segurança da Informação, com avaliação de maturidade, simulador de phishing, conteúdos sobre LGPD e boas práticas.</p><span class="home-card__tags">Segurança da Informação · Publicado</span><span class="home-card__go">Ver detalhes <span aria-hidden="true">→</span></span></a>
+      </div>
+    </div>
+
+    <div class="home-block">
+      <header class="home-head"><div><p class="home-label">// habilidades</p><h2 class="home-h2" data-text-anim>Habilidades em desenvolvimento</h2></div></header>
+      <div class="home-skills">
+        <div data-reveal style="--i:0"><p class="home-label">// desenvolvimento</p><p class="home-skills__l">Python · C# · HTML &amp; CSS · JavaScript · Lógica de programação · Algoritmos</p></div>
+        <div data-reveal style="--i:1"><p class="home-label">// dados</p><p class="home-skills__l">Banco de dados · SQL · Análise de dados · Excel</p></div>
+        <div data-reveal style="--i:2"><p class="home-label">// engenharia</p><p class="home-skills__l">Arquitetura de sistemas · APIs · Git · Documentação · Segurança da informação</p></div>
+      </div>
+    </div>
+
+    <div class="home-block">
+      <header class="home-head"><div><p class="home-label">// engenharia</p><h2 class="home-h2" data-text-anim>Como penso quando construo software</h2></div><a class="home-more" href="#engenharia" data-nav="engenharia">Ver engenharia <span aria-hidden="true">→</span></a></header>
+      <ol class="home-steps">
+        <li data-reveal style="--i:0"><span>01</span><p>O que realmente precisa ser resolvido?</p></li>
+        <li data-reveal style="--i:1"><span>02</span><p>O que precisa ser separado?</p></li>
+        <li data-reveal style="--i:2"><span>03</span><p>O que acontece com a informação?</p></li>
+        <li data-reveal style="--i:3"><span>04</span><p>O que pode dar errado?</p></li>
+        <li data-reveal style="--i:4"><span>05</span><p>Como isso pode crescer sem começar de novo?</p></li>
+      </ol>
+    </div>
+
+    <div class="home-block home-cta">
+      <p class="home-label">// vamos conversar</p>
+      <h2 class="home-h2" data-text-anim>Tem um projeto em mente?</h2>
+      <p class="home-cta__t" data-reveal>Se você tem um problema para resolver, uma ideia para estruturar ou um projeto para desenvolver, podemos conversar.</p>
+      <p class="home-cta__a" data-reveal style="--i:1"><a class="hero-cta hero-cta--primary" href="mailto:alexcavalcante1800@gmail.com">Enviar mensagem <span class="hero-cta__arrow" aria-hidden="true">→</span></a><a class="hero-cta hero-cta--secondary" href="#contato" data-nav="contato">Ver contatos <span class="hero-cta__arrow" aria-hidden="true">→</span></a></p>
+    </div>
   </div>
 </section>
 
@@ -124,9 +156,6 @@
       </ul>
     </div>
   </div>
-  </div>
-  <div class="sec-visual">
-    <img src="assets/images/sobre.svg" width="1024" height="1536" alt="Ilustração representando minha trajetória profissional e tecnológica" decoding="async" loading="lazy" />
   </div>
 </section>
 
@@ -200,9 +229,6 @@
     </article>
   </div>
   </div>
-  <div class="sec-visual">
-    <img src="assets/images/projetos.svg" width="1024" height="1024" alt="Ilustração representando projetos de tecnologia" decoding="async" loading="lazy" />
-  </div>
 </section>
 
 <section id="engenharia" data-view="engenharia">
@@ -273,9 +299,6 @@
     </ol>
     <p class="eng-close"><a href="#projetos" data-nav="projetos" class="eng-cta">Ver projetos que aplicam esse pensamento <span class="hero-cta__arrow" aria-hidden="true">→</span></a></p>
   </div>
-  <div class="sec-visual sec-visual--horizontal">
-    <img src="assets/images/engenharia.svg" width="1536" height="1024" alt="Ilustração representando engenharia de software e arquitetura de sistemas" decoding="async" loading="lazy" />
-  </div>
 </section>
 
 <section id="experiencia" data-view="experiencia">
@@ -302,9 +325,6 @@
     <p class="exp-close__text">Experiências diferentes, uma mesma base: analisar, organizar e resolver problemas.</p>
     <a href="#formacao" data-nav="formacao" class="exp-cta">Conhecer minha formação <span class="hero-cta__arrow">&rarr;</span></a>
   </div>
-  </div>
-  <div class="sec-visual sec-visual--horizontal">
-    <img src="assets/images/experiencia.svg" width="1536" height="1024" alt="Ilustração representando minha trajetória profissional" decoding="async" loading="lazy" />
   </div>
   <aside class="exp-synthesis" aria-label="O que essa trajetória me trouxe">
     <p class="exp-synthesis__label">// o que essa trajetória me trouxe</p>
@@ -355,9 +375,6 @@
     </div>
   </div>
   </div>
-  <div class="sec-visual sec-visual--horizontal">
-    <img src="assets/images/formacao.svg" width="1536" height="1024" alt="Ilustração representando formação e certificações" decoding="async" loading="lazy" />
-  </div>
 </section>
 
 <section id="contato" data-view="contato">
@@ -394,9 +411,6 @@
     <p class="contact-close__sign"><span class="contact-close__user">// alex.cavalcante</span><span class="contact-close__tags">desenvolvimento · dados · engenharia</span></p>
     <button class="contact-cv" onclick="downloadCV()">Baixar currículo <span class="hero-cta__arrow" aria-hidden="true">→</span></button>
   </div>
-  </div>
-  <div class="sec-visual sec-visual--horizontal">
-    <img src="assets/images/contato.svg" width="1536" height="1024" alt="Ilustração representando formas de contato" decoding="async" loading="lazy" />
   </div>
 </section>
 
