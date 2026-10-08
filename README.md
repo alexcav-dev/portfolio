@@ -16,12 +16,7 @@ Este projeto foi desenvolvido para apresentar minha trajetória profissional, ha
 
 Este projeto recebe melhorias constantes como parte da minha evolução profissional na área de Tecnologia da Informação.
 
----
-
-## 👁️ Preview
-
-![Preview](assets/images/preview.png)
-> *A imagem será adicionada após a publicação do projeto.*
+A animação das galerias de projetos ainda precisa de revisão visual no navegador.
 
 ---
 
@@ -54,6 +49,8 @@ Este projeto recebe melhorias constantes como parte da minha evolução profissi
 
 ## 📁 Estrutura do Projeto
 
+Estrutura resumida dos arquivos e diretórios utilizados:
+
 ```
 portfolio/
 ├── index.html
@@ -63,8 +60,18 @@ portfolio/
 ├── js/
 │   └── script.js
 └── assets/
+    ├── audio/
+    ├── fonts/
     ├── images/
-    │   └── profile.png
+    │   ├── alex-retrato.png
+    │   ├── hero-diagonal.png
+    │   ├── audio-cat/
+    │   ├── backgrounds/
+    │   │   └── parallax/
+    │   └── projects/
+    │       ├── hub/
+    │       ├── safehook/
+    │       └── finvexys/
     └── files/
         └── Alex_Cavalcante_Costa_Curriculo_2026.pdf
 ```
