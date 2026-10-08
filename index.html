@@ -12,6 +12,7 @@
 </head>
 <body>
 <nav class="site-nav">
+  <a class="site-monogram active" href="#inicio" data-nav="inicio" aria-label="Alex Cavalcante Costa — Início">AL</a>
   <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-panel" aria-label="Abrir menu">
     <span class="nav-toggle__bar" aria-hidden="true"></span>
     <span class="nav-toggle__bar" aria-hidden="true"></span>
@@ -26,25 +27,19 @@
       <li><a href="#engenharia" data-nav="engenharia">Engenharia</a></li>
       <li><a href="#experiencia" data-nav="experiencia">Experiência</a></li>
       <li><a href="#formacao" data-nav="formacao">Formação</a></li>
-      <li><a href="#contato" data-nav="contato">Contato</a></li>
     </ul>
   </div>
 
-  <button type="button" class="ambient-toggle" id="ambient-toggle" aria-pressed="false" aria-label="Ativar música ambiente">
-    <span class="ambient-toggle__note" aria-hidden="true">&#9834;</span>
-    <span class="ambient-toggle__text">AMBIENT <span class="ambient-toggle__state">OFF</span></span>
-    <span class="ambient-toggle__wave" aria-hidden="true"><i></i><i></i><i></i></span>
-    <span class="ambient-toggle__bass" aria-hidden="true"></span>
-  </button>
-  <audio id="ambient-audio" src="assets/audio/ambient-lofi.mp3" loop preload="none"></audio>
+  <a class="site-contact" href="#contato" data-nav="contato">Contato <span aria-hidden="true">↗</span></a>
 </nav>
 
 <main>
 <section id="inicio" class="hero is-active" data-view="inicio" aria-label="Apresentação de Alex Cavalcante Costa">
   <div class="hero__stage">
+    <div class="hero__backdrop" aria-hidden="true"><img src="assets/images/hero-diagonal.png" width="1672" height="941" alt="" decoding="async" /></div>
     <div class="hero__copy">
-      <p class="hero__kicker">// portfólio</p>
-      <h1 class="hero__name" data-text-anim><span class="hero__line">Alex Cavalcante</span> <span class="hero__line hero__line--accent">Costa.</span></h1>
+      <h1 class="hero__name" data-text-anim data-hero-title>DEVELOPER</h1>
+      <p class="hero__identity">Alex Cavalcante Costa</p>
       <p class="hero__lead">Desenvolvimento de software com foco em arquitetura, segurança e experiências digitais.</p>
       <nav class="hero-actions" aria-label="Atalhos para as seções do portfólio">
         <a href="#projetos" data-nav="projetos" class="hero-cta hero-cta--primary">Explorar projetos <span class="hero-cta__arrow" aria-hidden="true">→</span></a>
@@ -56,11 +51,20 @@
     <figure class="hero__portrait">
       <img src="assets/images/alex-retrato.png" width="1254" height="1254" alt="Retrato de Alex Cavalcante Costa" fetchpriority="high" decoding="async" />
     </figure>
-    <svg class="hero__badge" viewBox="0 0 120 120" aria-hidden="true" focusable="false"><defs><path id="hero-badge-path" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs><text textLength="282" lengthAdjust="spacing"><textPath href="#hero-badge-path">DESENVOLVIMENTO · ARQUITETURA · SEGURANÇA · </textPath></text><path class="hero__badge-star" d="M60 43l3.6 13.4L77 60l-13.4 3.6L60 77l-3.6-13.4L43 60l13.4-3.6z"/></svg>
   </div>
 
-  <div class="home-inner">
+  <div class="home-scenery layered-area" data-layered-parallax>
+    <div class="layered-backdrop" aria-hidden="true">
+      <div class="layered-backdrop__viewport">
+        <div class="layered-backdrop__frame">
+          <img src="assets/images/backgrounds/parallax/desk-base.png" width="1672" height="941" alt="" loading="lazy" decoding="async" />
+          <img src="assets/images/backgrounds/parallax/desk-left.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="6" />
+          <img src="assets/images/backgrounds/parallax/desk-right.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="14" />
+        </div>
+      </div>
+    </div>
 
+    <div class="home-inner">
     <div class="home-block">
       <header class="home-head"><div><p class="home-label">// projetos</p><h2 class="home-h2" data-text-anim>Projetos selecionados</h2></div><a class="home-more" href="#projetos" data-nav="projetos">Ver todos os projetos <span aria-hidden="true">→</span></a></header>
       <div class="home-cards">
@@ -97,15 +101,20 @@
       <p class="home-cta__a" data-reveal style="--i:1"><a class="hero-cta hero-cta--primary" href="mailto:alexcavalcante1800@gmail.com">Enviar mensagem <span class="hero-cta__arrow" aria-hidden="true">→</span></a><a class="hero-cta hero-cta--secondary" href="#contato" data-nav="contato">Ver contatos <span class="hero-cta__arrow" aria-hidden="true">→</span></a></p>
     </div>
   </div>
+  </div>
 </section>
 
-<section id="sobre" data-view="sobre">
-  <div class="atmosphere atmosphere--sobre" aria-hidden="true">
-    <span class="atmo atmo--1"><img class="splash splash--rs" src="assets/images/splash_06.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--2"><img class="splash splash--ri" src="assets/images/splash_03.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--3"><img class="splash splash--rb" src="assets/images/splash_01.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--4"><img class="splash splash--lb" src="assets/images/splash_04.svg" alt="" decoding="async" loading="lazy" /></span>
+<section id="sobre" class="layered-area" data-view="sobre" data-layered-parallax>
+  <div class="layered-backdrop" aria-hidden="true">
+    <div class="layered-backdrop__viewport">
+      <div class="layered-backdrop__frame">
+        <img src="assets/images/backgrounds/parallax/desk-base.png" width="1672" height="941" alt="" loading="lazy" decoding="async" />
+        <img src="assets/images/backgrounds/parallax/desk-left.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="6" />
+        <img src="assets/images/backgrounds/parallax/desk-right.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="14" />
+      </div>
+    </div>
   </div>
+  <div class="view-content">
   <header class="sec-head">
     <p class="section-label">// sobre mim</p>
     <h2 class="section-title">Da experiência corporativa<br />à tecnologia</h2>
@@ -157,16 +166,20 @@
     </div>
   </div>
   </div>
+  </div>
 </section>
 
-<section id="projetos" data-view="projetos">
-  <div class="atmosphere atmosphere--projetos" aria-hidden="true">
-    <span class="atmo atmo--1"><img class="splash splash--rs" src="assets/images/splash_05.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--2"><img class="splash splash--ri" src="assets/images/splash_03.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--3"><img class="splash splash--rb" src="assets/images/splash_06.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--4"><img class="splash splash--lb" src="assets/images/splash_02.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--5"><img class="splash splash--xr" src="assets/images/splash_01.svg" alt="" decoding="async" loading="lazy" /></span>
+<section id="projetos" class="layered-area" data-view="projetos" data-layered-parallax>
+  <div class="layered-backdrop" aria-hidden="true">
+    <div class="layered-backdrop__viewport">
+      <div class="layered-backdrop__frame">
+        <img src="assets/images/backgrounds/parallax/desk-base.png" width="1672" height="941" alt="" loading="lazy" decoding="async" />
+        <img src="assets/images/backgrounds/parallax/desk-left.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="6" />
+        <img src="assets/images/backgrounds/parallax/desk-right.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="14" />
+      </div>
+    </div>
   </div>
+  <div class="view-content">
   <header class="sec-head">
     <p class="section-label">// projetos</p>
     <h2 class="section-title">Projetos que transformam problemas reais em sistemas.</h2>
@@ -191,12 +204,29 @@
       </ul>
       <a href="https://hub-website-ten.vercel.app" target="_blank" rel="noopener" class="btn-primary">Explorar projeto <span class="hero-cta__arrow" aria-hidden="true">→</span></a>
     </div>
-    <figure class="hub-visual" aria-hidden="true">
-      <p class="hub-visual__kicker">// hub tributário</p>
-      <p class="hub-visual__title">Hub<br />Tributário</p>
-      <span class="hub-visual__line"></span>
-      <p class="hub-visual__meta">Estados · Municípios · Serviços</p>
-    </figure>
+    <div class="project-gallery" data-project-gallery data-project-name="Hub Tributário" role="region" aria-roledescription="galeria" aria-label="Capturas de Hub Tributário">
+      <div class="project-gallery__stage">
+        <button type="button" class="project-gallery__capture" data-capture-label="Dashboard" data-slot="center" aria-label="Ampliar Hub Tributário — Dashboard">
+          <img src="assets/images/projects/hub/hub-01-dashboard.png" width="1558" height="883" alt="Hub Tributário — Dashboard" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="project-gallery__capture" data-capture-label="Serviços estaduais" data-slot="right" aria-label="Ampliar Hub Tributário — Serviços estaduais">
+          <img src="assets/images/projects/hub/hub-02-servicos-estaduais.png" width="1568" height="885" alt="Hub Tributário — Serviços estaduais" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="project-gallery__capture" data-capture-label="Serviços municipais" data-slot="off-right" aria-label="Ampliar Hub Tributário — Serviços municipais" tabindex="-1" aria-hidden="true" inert>
+          <img src="assets/images/projects/hub/hub-03-servicos-municipais.png" width="1557" height="883" alt="Hub Tributário — Serviços municipais" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="project-gallery__capture" data-capture-label="Painel administrativo" data-slot="left" aria-label="Ampliar Hub Tributário — Painel administrativo">
+          <img src="assets/images/projects/hub/hub-04-painel-administrativo.png" width="1557" height="886" alt="Hub Tributário — Painel administrativo" loading="lazy" decoding="async" />
+        </button>
+      </div>
+      <div class="project-gallery__controls">
+        <button type="button" data-gallery-prev aria-label="Captura anterior de Hub Tributário"><span aria-hidden="true">←</span></button>
+        <span class="project-gallery__counter" data-gallery-counter aria-live="off">1 / 4</span>
+        <button type="button" data-gallery-next aria-label="Próxima captura de Hub Tributário"><span aria-hidden="true">→</span></button>
+        <button type="button" class="project-gallery__autoplay" data-gallery-autoplay aria-label="Pausar passagem automática de Hub Tributário">Pausar</button>
+      </div>
+      <p class="project-gallery__caption" data-gallery-caption>Dashboard</p>
+    </div>
   </article>
   <div class="sub-projects">
     <article class="sub-project">
@@ -205,11 +235,28 @@
         <span class="sub-project__year" aria-hidden="true">2026</span>
       </div>
       <h3 class="project-title">Finvexys Finance</h3>
-      <p class="project-desc">Plataforma desenvolvida a partir de uma necessidade real identificada junto a um cliente, com o objetivo de auxiliar no controle financeiro, organização de informações e acompanhamento de indicadores de gestão.</p>
+    <div class="project-gallery project-gallery--pair" data-project-gallery data-project-name="Finvexys Finance" role="region" aria-roledescription="galeria" aria-label="Capturas de Finvexys Finance">
+      <div class="project-gallery__stage">
+        <button type="button" class="project-gallery__capture" data-capture-label="Protótipo de interface — Dashboard" data-slot="center" aria-label="Ampliar Finvexys Finance — Protótipo de interface — Dashboard">
+          <img src="assets/images/projects/finvexys/finvexys-01-prototipo-dashboard.png" width="1920" height="1080" alt="Finvexys Finance — Protótipo de interface — Dashboard" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="project-gallery__capture" data-capture-label="Protótipo de interface — Financeiro" data-slot="right" aria-label="Ampliar Finvexys Finance — Protótipo de interface — Financeiro">
+          <img src="assets/images/projects/finvexys/finvexys-02-prototipo-financeiro.png" width="1920" height="1080" alt="Finvexys Finance — Protótipo de interface — Financeiro" loading="lazy" decoding="async" />
+        </button>
+      </div>
+      <div class="project-gallery__controls">
+        <button type="button" data-gallery-prev aria-label="Captura anterior de Finvexys Finance"><span aria-hidden="true">←</span></button>
+        <span class="project-gallery__counter" data-gallery-counter aria-live="off">1 / 2</span>
+        <button type="button" data-gallery-next aria-label="Próxima captura de Finvexys Finance"><span aria-hidden="true">→</span></button>
+        <button type="button" class="project-gallery__autoplay" data-gallery-autoplay aria-label="Pausar passagem automática de Finvexys Finance">Pausar</button>
+      </div>
+      <p class="project-gallery__caption" data-gallery-caption>Protótipo de interface — Dashboard</p>
+    </div>
+      <p class="project-desc">Projeto acadêmico em grupo, em fase inicial de desenvolvimento. As capturas apresentam protótipos de interface do Finvexys Finance.</p>
       <div class="project-meta">
         <div class="meta-item"><span class="meta-key">Ano</span><span class="meta-val">2026</span></div>
         <div class="meta-item"><span class="meta-key">Tipo</span><span class="meta-val">Controle Financeiro</span></div>
-        <div class="meta-item"><span class="meta-key">Status</span><span class="meta-val">✅ Publicado</span></div>
+        <div class="meta-item"><span class="meta-key">Status</span><span class="meta-val">Em desenvolvimento</span></div>
       </div>
       <a href="https://finvexys.netlify.app" target="_blank" rel="noopener" class="btn-primary">Ver projeto <span class="hero-cta__arrow" aria-hidden="true">→</span></a>
     </article>
@@ -219,6 +266,32 @@
         <span class="sub-project__year" aria-hidden="true">2026</span>
       </div>
       <h3 class="project-title">SafeHook</h3>
+    <div class="project-gallery" data-project-gallery data-project-name="SafeHook" role="region" aria-roledescription="galeria" aria-label="Capturas de SafeHook">
+      <div class="project-gallery__stage">
+        <button type="button" class="project-gallery__capture" data-capture-label="Apresentação" data-slot="center" aria-label="Ampliar SafeHook — Apresentação">
+          <img src="assets/images/projects/safehook/safehook-01-apresentacao.png" width="1857" height="926" alt="SafeHook — Apresentação" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="project-gallery__capture" data-capture-label="Avaliação" data-slot="right" aria-label="Ampliar SafeHook — Avaliação">
+          <img src="assets/images/projects/safehook/safehook-02-avaliacao.png" width="1858" height="926" alt="SafeHook — Avaliação" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="project-gallery__capture" data-capture-label="Resultado" data-slot="off-right" aria-label="Ampliar SafeHook — Resultado" tabindex="-1" aria-hidden="true" inert>
+          <img src="assets/images/projects/safehook/safehook-03-resultado.png" width="1859" height="929" alt="SafeHook — Resultado" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="project-gallery__capture" data-capture-label="LGPD" data-slot="off-right" aria-label="Ampliar SafeHook — LGPD" tabindex="-1" aria-hidden="true" inert>
+          <img src="assets/images/projects/safehook/safehook-04-lgpd.png" width="1867" height="927" alt="SafeHook — LGPD" loading="lazy" decoding="async" />
+        </button>
+        <button type="button" class="project-gallery__capture" data-capture-label="Simulador de phishing" data-slot="left" aria-label="Ampliar SafeHook — Simulador de phishing">
+          <img src="assets/images/projects/safehook/safehook-05-simulador-phishing.png" width="1856" height="923" alt="SafeHook — Simulador de phishing" loading="lazy" decoding="async" />
+        </button>
+      </div>
+      <div class="project-gallery__controls">
+        <button type="button" data-gallery-prev aria-label="Captura anterior de SafeHook"><span aria-hidden="true">←</span></button>
+        <span class="project-gallery__counter" data-gallery-counter aria-live="off">1 / 5</span>
+        <button type="button" data-gallery-next aria-label="Próxima captura de SafeHook"><span aria-hidden="true">→</span></button>
+        <button type="button" class="project-gallery__autoplay" data-gallery-autoplay aria-label="Pausar passagem automática de SafeHook">Pausar</button>
+      </div>
+      <p class="project-gallery__caption" data-gallery-caption>Apresentação</p>
+    </div>
       <p class="project-desc">Plataforma educacional desenvolvida para conscientização em Segurança da Informação, reunindo avaliação de maturidade, simulador de phishing, conteúdos sobre LGPD e recomendações de boas práticas para usuários e empresas.</p>
       <div class="project-meta">
         <div class="meta-item"><span class="meta-key">Ano</span><span class="meta-val">2026</span></div>
@@ -229,17 +302,32 @@
     </article>
   </div>
   </div>
+  </div>
+  <dialog class="project-lightbox" id="project-lightbox" aria-labelledby="project-lightbox-title" aria-describedby="project-lightbox-caption">
+    <header class="project-lightbox__head">
+      <h2 id="project-lightbox-title"></h2>
+      <button type="button" class="project-lightbox__close" data-lightbox-close aria-label="Fechar imagem ampliada"><span aria-hidden="true">×</span></button>
+    </header>
+    <div class="project-lightbox__image"><img alt="" decoding="async" /></div>
+    <footer class="project-lightbox__foot">
+      <button type="button" data-lightbox-prev aria-label="Captura anterior"><span aria-hidden="true">←</span></button>
+      <p id="project-lightbox-caption" aria-live="polite"></p>
+      <button type="button" data-lightbox-next aria-label="Próxima captura"><span aria-hidden="true">→</span></button>
+    </footer>
+  </dialog>
 </section>
 
-<section id="engenharia" data-view="engenharia">
-  <div class="atmosphere atmosphere--engenharia" aria-hidden="true">
-    <span class="atmo atmo--1"><img class="splash splash--rs" src="assets/images/splash_02.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--2"><img class="splash splash--ri" src="assets/images/splash_05.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--3"><img class="splash splash--rb" src="assets/images/splash_01.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--4"><img class="splash splash--lb" src="assets/images/splash_06.svg" alt="" decoding="async" loading="lazy" /></span>
-<span class="atmo atmo--5"><img class="splash splash--xl" src="assets/images/splash_03.svg" alt="" decoding="async" loading="lazy" /></span>
-<span class="atmo atmo--6"><img class="splash splash--xc" src="assets/images/splash_04.svg" alt="" decoding="async" loading="lazy" /></span>
+<section id="engenharia" class="layered-area" data-view="engenharia" data-layered-parallax>
+  <div class="layered-backdrop" aria-hidden="true">
+    <div class="layered-backdrop__viewport">
+    <div class="layered-backdrop__frame">
+      <img src="assets/images/backgrounds/parallax/engineering-base.png" width="1672" height="941" alt="" loading="lazy" decoding="async" />
+      <img src="assets/images/backgrounds/parallax/engineering-notebook.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="6" />
+      <img src="assets/images/backgrounds/parallax/engineering-front.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="14" />
+    </div>
+    </div>
   </div>
+  <div class="view-content">
   <header class="sec-head">
     <p class="section-label">// engenharia</p>
     <h2 class="section-title">Como penso quando construo software.</h2>
@@ -299,16 +387,20 @@
     </ol>
     <p class="eng-close"><a href="#projetos" data-nav="projetos" class="eng-cta">Ver projetos que aplicam esse pensamento <span class="hero-cta__arrow" aria-hidden="true">→</span></a></p>
   </div>
+  </div>
 </section>
 
-<section id="experiencia" data-view="experiencia">
-  <div class="atmosphere atmosphere--experiencia" aria-hidden="true">
-    <span class="atmo atmo--1"><img class="splash splash--rs" src="assets/images/splash_03.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--2"><img class="splash splash--ri" src="assets/images/splash_06.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--3"><img class="splash splash--rb" src="assets/images/splash_05.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--4"><img class="splash splash--lb" src="assets/images/splash_01.svg" alt="" decoding="async" loading="lazy" /></span>
-<span class="atmo atmo--5"><img class="splash splash--xr" src="assets/images/splash_06.svg" alt="" decoding="async" loading="lazy" /></span>
+<section id="experiencia" class="layered-area" data-view="experiencia" data-layered-parallax>
+  <div class="layered-backdrop" aria-hidden="true">
+    <div class="layered-backdrop__viewport">
+      <div class="layered-backdrop__frame">
+        <img src="assets/images/backgrounds/parallax/desk-base.png" width="1672" height="941" alt="" loading="lazy" decoding="async" />
+        <img src="assets/images/backgrounds/parallax/desk-left.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="6" />
+        <img src="assets/images/backgrounds/parallax/desk-right.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="14" />
+      </div>
+    </div>
   </div>
+  <div class="view-content">
   <header class="sec-head">
     <p class="section-label">// trajetória profissional</p>
     <h2 class="section-title">Antes do código, vieram os problemas reais.</h2>
@@ -316,10 +408,38 @@
   </header>
   <div class="sec-body">
   <div class="timeline">
-    <div class="tl-item"><div class="tl-dot"></div><p class="tl-period">2025 – 2026</p><p class="tl-title">Analista de Dados</p><p class="tl-company">TM Transporte e Logística</p><p class="tl-desc">Análise de dados operacionais, controle de informações sensíveis e melhoria de processos. Participei da implementação de controles de acesso e soluções para eficiência operacional.</p><p class="tl-meta">Dados · Processos · Controle · Acesso</p></div>
-    <div class="tl-item"><div class="tl-dot"></div><p class="tl-period">2023 – 2025</p><p class="tl-title">Financeiro e Administrativo</p><p class="tl-company">Recriarte</p><p class="tl-desc">Atividades financeiras, administrativas e atendimento às unidades. Desenvolvi controles internos, planilhas de gestão e organização de processos.</p><p class="tl-meta">Financeiro · Administração · Processos · Controle</p></div>
-    <div class="tl-item"><div class="tl-dot"></div><p class="tl-period">2021 – 2023</p><p class="tl-title">Analista de Crédito e Líder de Backoffice</p><p class="tl-company">Zênite</p><p class="tl-desc">Análise documental e processos de crédito consignado com sistemas bancários. Liderança, suporte operacional e organização da equipe.</p><p class="tl-meta">Crédito · Análise documental · Operação · Liderança</p></div>
-    <div class="tl-item"><div class="tl-dot"></div><p class="tl-period">2018 – 2021</p><p class="tl-title">Estoque</p><p class="tl-company">Un Your Salon</p><p class="tl-desc">Controle de estoque, organização de produtos e inventários.</p><p class="tl-meta">Estoque · Organização · Inventário</p></div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <p class="tl-period">Setembro de 2025 – maio de 2026</p>
+      <p class="tl-title">Analista de dados</p>
+      <p class="tl-company">TM Logística</p>
+      <p class="tl-desc">Construção de planilhas em Excel para acompanhar mais de 200 prestadores, incluindo pagamentos, comissões e valores variáveis. Análise de horários de chegada e saída, tempos de viagem e rotas para acompanhamento da operação logística.</p>
+      <p class="tl-meta">Excel · Dados · Operação logística</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <p class="tl-period">Fevereiro de 2023 – fevereiro de 2025</p>
+      <p class="tl-title">Financeiro</p>
+      <p class="tl-company">Escola Recriar LTDA</p>
+      <p class="tl-desc">Elaboração de planilhas para controle financeiro, pagamentos de prestadores, recebimentos e fechamento de comissões. Acompanhamento de inadimplência e negociação com clientes. Apoio administrativo, organização de documentos para emissão de DRTs e acompanhamento de alunos na conclusão dos cursos.</p>
+      <p class="tl-meta">Financeiro · Administração · Negociação</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <p class="tl-period">Novembro de 2021 – 2023</p>
+      <p class="tl-title">Analista de Crédito / Líder de Back Office</p>
+      <p class="tl-company">Zenite</p>
+      <p class="tl-desc">Liderança de Back Office e compartilhamento de conhecimentos com a equipe. Análise documental e finalização de contratos. Comunicação com gerentes e acompanhamento de comissões. Análises de crédito consignado e elaboração de planilhas e relatórios.</p>
+      <p class="tl-meta">Crédito · Análise documental · Liderança</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-dot"></div>
+      <p class="tl-period">Agosto de 2018 – maio de 2021</p>
+      <p class="tl-title">Estoquista</p>
+      <p class="tl-company">Un Your Salon</p>
+      <p class="tl-desc">Controle de estoque e planejamento de saída de itens. Recebimento de mercadorias e negociação de valores. Distribuição de pagamentos e comissões. Organização e limpeza do ambiente.</p>
+      <p class="tl-meta">Estoque · Negociação · Organização</p>
+    </div>
   </div>
   <div class="exp-close">
     <p class="exp-close__text">Experiências diferentes, uma mesma base: analisar, organizar e resolver problemas.</p>
@@ -335,20 +455,24 @@
       <li class="exp-point"><span class="exp-point__num">04</span><h3 class="exp-point__title">Tecnologia</h3><p class="exp-point__text">Levar essa experiência para a construção de sistemas, automações e soluções digitais.</p></li>
     </ol>
   </aside>
+  </div>
 </section>
 
-<section id="formacao" data-view="formacao">
-  <div class="atmosphere atmosphere--formacao" aria-hidden="true">
-    <span class="atmo atmo--1"><img class="splash splash--rs" src="assets/images/splash_06.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--2"><img class="splash splash--ri" src="assets/images/splash_02.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--3"><img class="splash splash--rb" src="assets/images/splash_04.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--4"><img class="splash splash--lb" src="assets/images/splash_05.svg" alt="" decoding="async" loading="lazy" /></span>
-<span class="atmo atmo--5"><img class="splash splash--xr" src="assets/images/splash_03.svg" alt="" decoding="async" loading="lazy" /></span>
+<section id="formacao" class="layered-area" data-view="formacao" data-layered-parallax>
+  <div class="layered-backdrop" aria-hidden="true">
+    <div class="layered-backdrop__viewport">
+      <div class="layered-backdrop__frame">
+        <img src="assets/images/backgrounds/parallax/desk-base.png" width="1672" height="941" alt="" loading="lazy" decoding="async" />
+        <img src="assets/images/backgrounds/parallax/desk-left.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="6" />
+        <img src="assets/images/backgrounds/parallax/desk-right.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="14" />
+      </div>
+    </div>
   </div>
+  <div class="view-content">
   <header class="sec-head">
-    <p class="section-label">// formação & certificações</p>
-    <h2 class="section-title">Uma base técnica em construção — com registros, certificações e aprofundamento.</h2>
-    <p class="section-desc">Formação acadêmica, certificações Google concluídas e um curso em andamento — conhecimento técnico construído com continuidade.</p>
+    <p class="section-label">// formação & certificados</p>
+    <h2 class="section-title">Uma base técnica em construção — com formação, cursos e aprofundamento.</h2>
+    <p class="section-desc">Formação acadêmica, cursos com certificados da Cisco e do Google e estudos em andamento — conhecimento técnico construído com continuidade.</p>
   </header>
   <div class="sec-body">
   <div class="form-records">
@@ -360,31 +484,37 @@
     </div>
     <div class="form-record">
       <p class="form-record__head"><span class="form-record__num">02</span><span class="form-record__label">Conhecimentos complementares</span></p>
-      <h3 class="form-record__title">Certificações Google</h3>
+      <h3 class="form-record__title">Cursos e certificados — Cisco e Google</h3>
       <div class="cert-list">
-        <div class="cert-card"><span class="cert-num">01</span><p class="cert-name">Foundations of Cybersecurity</p><p class="cert-issuer">Google · Maio de 2025</p><p class="cert-field">Cibersegurança</p></div>
-        <div class="cert-card"><span class="cert-num">02</span><p class="cert-name">Play It Safe: Manage Security Risks</p><p class="cert-issuer">Google · Maio de 2025</p><p class="cert-field">Cibersegurança</p></div>
-        <div class="cert-card"><span class="cert-num">03</span><p class="cert-name">Connect and Protect: Networks and Network Security</p><p class="cert-issuer">Google · Julho de 2026</p><p class="cert-field">Connect and Protect</p></div>
+        <div class="cert-card"><span class="cert-num">01</span><p class="cert-name">Introduction to IoT</p><p class="cert-issuer">Cisco · outubro de 2026</p></div>
+        <div class="cert-card"><span class="cert-num">02</span><p class="cert-name">Introduction to Cybersecurity</p><p class="cert-issuer">Cisco · setembro de 2026</p></div>
+        <div class="cert-card"><span class="cert-num">03</span><p class="cert-name">Google Cloud Capacita+</p><p class="cert-issuer">Google · setembro de 2026</p></div>
+        <div class="cert-card"><span class="cert-num">04</span><p class="cert-name">Connect and Protect: Networks and Network Security</p><p class="cert-issuer">Google · julho de 2026</p></div>
+        <div class="cert-card"><span class="cert-num">05</span><p class="cert-name">Play It Safe: Manage Security Risks</p><p class="cert-issuer">Google · maio de 2025</p></div>
+        <div class="cert-card"><span class="cert-num">06</span><p class="cert-name">Foundations of Cybersecurity</p><p class="cert-issuer">Google · maio de 2025</p></div>
       </div>
     </div>
     <div class="form-record form-record--ongoing">
       <p class="form-record__head"><span class="form-record__num">03</span><span class="form-record__label">Em andamento</span></p>
       <h3 class="form-record__title">SQL e Linux</h3>
       <p class="form-record__desc">Curso em andamento voltado ao aprofundamento de conhecimentos em SQL e Linux.</p>
-      <p class="form-record__note">Ao concluir, este aprofundamento compõe a próxima certificação Google.</p>
     </div>
+  </div>
   </div>
   </div>
 </section>
 
-<section id="contato" data-view="contato">
-  <div class="atmosphere atmosphere--contato" aria-hidden="true">
-    <span class="atmo atmo--1"><img class="splash splash--rs" src="assets/images/splash_01.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--2"><img class="splash splash--ri" src="assets/images/splash_03.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--3"><img class="splash splash--rb" src="assets/images/splash_06.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--4"><img class="splash splash--lb" src="assets/images/splash_04.svg" alt="" decoding="async" loading="lazy" /></span>
-    <span class="atmo atmo--5"><img class="splash splash--xr" src="assets/images/splash_02.svg" alt="" decoding="async" loading="lazy" /></span>
+<section id="contato" class="layered-area" data-view="contato" data-layered-parallax>
+  <div class="layered-backdrop" aria-hidden="true">
+    <div class="layered-backdrop__viewport">
+      <div class="layered-backdrop__frame">
+        <img src="assets/images/backgrounds/parallax/desk-base.png" width="1672" height="941" alt="" loading="lazy" decoding="async" />
+        <img src="assets/images/backgrounds/parallax/desk-left.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="6" />
+        <img src="assets/images/backgrounds/parallax/desk-right.png" width="1672" height="941" alt="" loading="lazy" decoding="async" data-layer-distance="14" />
+      </div>
+    </div>
   </div>
+  <div class="view-content">
   <header class="sec-head">
     <p class="section-label">// contato</p>
     <h2 class="section-title">Vamos conversar sobre o próximo projeto.</h2>
@@ -412,9 +542,28 @@
     <button class="contact-cv" onclick="downloadCV()">Baixar currículo <span class="hero-cta__arrow" aria-hidden="true">→</span></button>
   </div>
   </div>
+  </div>
 </section>
 
     </main>
+
+    <!-- A trilha local só recebe src após ativação; reprodução sem loop. -->
+    <div class="audio-cat" id="audio-cat">
+      <div class="audio-cat__bubble" id="audio-cat-bubble" hidden>
+        <p role="status">Uma trilha para acompanhar sua leitura e deixar a visita mais acolhedora.</p>
+        <button class="audio-cat__close" id="audio-cat-close" type="button" aria-label="Fechar mensagem"><span aria-hidden="true">×</span></button>
+      </div>
+      <button class="audio-cat__button" id="audio-cat-toggle" type="button" aria-label="Ativar música" aria-pressed="false" data-audio-src="assets/audio/SPILL YOUR TIME by KatzPascale - (Extended Instagram best part live version) - twly.mp3">
+        <span class="audio-cat__poses" aria-hidden="true">
+          <img class="audio-cat__pose audio-cat__pose--open" src="assets/images/audio-cat/cat-open.png" width="1254" height="1254" alt="" decoding="async" />
+          <img class="audio-cat__pose audio-cat__pose--half" src="assets/images/audio-cat/cat-half.png" width="1254" height="1254" alt="" decoding="async" />
+          <img class="audio-cat__pose audio-cat__pose--closed" src="assets/images/audio-cat/cat-closed.png" width="1312" height="1199" alt="" decoding="async" />
+        </span>
+        <span class="audio-cat__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+      <span class="audio-cat__status" id="audio-cat-status" role="status"></span>
+      <audio id="audio-cat-audio" preload="none"></audio>
+    </div>
 
     <script src="js/script.js"></script>
   </body>
