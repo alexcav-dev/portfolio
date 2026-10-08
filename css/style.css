@@ -496,7 +496,14 @@ section.layered-area[data-view].is-active:not(.hero){display:block;padding:0}
 .hero__identity{order:4;position:relative;z-index:3;margin:.25rem 0 .4rem;font-family:var(--font-h);font-weight:600;font-size:clamp(1.5rem,3vw,2rem);line-height:1.15;color:var(--p-500);text-align:center}
 .hero__portrait{order:3;position:relative;z-index:2;width:min(82.72%,22.56rem);margin:.5rem 0 0}
 .hero__portrait img{display:block;width:100%;height:auto;filter:brightness(.72) saturate(.78)}
-@media(max-width:767px){.hero__backdrop img{transform:none}.hero__backdrop::after{background:rgba(11,9,7,.6)}}
+@media(max-width:767px){
+  /* A margem integra a foto ao título sem alterar sua escala ou o empilhamento. */
+  .hero__portrait{margin-top:clamp(-2rem,-6vw,-1.25rem)}
+  /* Menos sobra na camada reduz o recorte de cover; a imagem ainda cobre as bordas. */
+  .hero__backdrop{top:-2rem;bottom:-2rem}
+  .hero__backdrop img{top:-12px;left:-12px;width:calc(100% + 24px);height:calc(100% + 24px);object-position:47% center;transform:none}
+  .hero__backdrop::after{background:rgba(11,9,7,.6)}
+}
 @media(prefers-reduced-motion:reduce){.hero__backdrop img{transform:none}}
 @supports ((mask-image:none) or (-webkit-mask-image:none)){
   .hero__portrait::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,transparent 8%,rgba(11,9,7,.12) 55%,rgba(11,9,7,.45));-webkit-mask-image:url(../assets/images/alex-retrato.png);mask-image:url(../assets/images/alex-retrato.png);-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat}
